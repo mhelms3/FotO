@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mhelms3.github.io/FotO/sitemap.xml
