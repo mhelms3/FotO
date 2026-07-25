@@ -2,13 +2,215 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Zunk - Character Sheet</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zunk Hermberger | Character Sheet</title>
+    <style>
+        :root {
+            --bg-color: #1a1a1c;
+            --card-bg: #242428;
+            --accent-color: #4a6fa5;
+            --text-color: #e1e1e6;
+            --text-muted: #a0a0b0;
+            --border-color: #383840;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 2rem;
+        }
+        .char-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+        .char-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .char-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .char-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 0.75rem;
+        }
+        .stat-box {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 0.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .stat-box span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        .stat-box strong {
+            font-size: 1.1rem;
+            color: #fff;
+        }
+        .skill-list, .feat-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.5rem;
+            list-style: none;
+            padding: 0;
+        }
+        details.spell-group {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+        details.spell-group summary {
+            font-size: 1rem;
+            color: var(--text-color);
+            outline: none;
+        }
+        details.spell-group ul {
+            margin-top: 0.5rem;
+            padding-left: 1.2rem;
+        }
+        ul {
+            margin-top: 0.5rem;
+            padding-left: 1.2rem;
+        }
+        .portrait-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background: #2a2a30;
+            border: 2px solid var(--accent-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .char-portrait {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+        }
+    </style>
 </head>
-<body style="padding: 2rem;">
-    <h1>Jhyselien</h1>
-    <p><a href="../index.html">&larr; Back to Campaign Log</a></p>
-    <hr style="margin: 1rem 0;">
-    <p><em>Character sheet details coming soon...</em></p>
+<body>
+
+    <header class="char-header">
+        <h1>Zunk Hermberger</h1>
+        <p>Level 5 Unbreakable Goblin Racketeer</p>
+    </header>
+
+    <main class="char-container">
+        <aside class="char-sidebar">
+            <div class="portrait-container">
+                <img src="zunk.png" alt="Zunk Portrait" class="char-portrait" />
+            </div>
+
+            <div class="char-section">
+                <h3>Vitals</h3>
+                <p><strong>HP:</strong> 53</p>
+                <p><strong>Speed:</strong> 25 ft</p>
+                <p><strong>Hero Points:</strong> 0</p>
+            </div>
+
+            <div class="char-section">
+                <h3>Heritage & Background</h3>
+                <p><strong>Ancestry:</strong> Goblin </p>
+                <p><strong>Heritage:</strong> Unbreakable Goblin</p>
+                <p><strong>Background:</strong> Acrobat</p>
+            </div>
+        </aside>
+
+        <div class="char-main">
+            <section class="char-section">
+                <h2>Ability Modifiers</h2>
+                <div class="stat-grid">
+                    <div class="stat-box"><span>STR</span><strong>+0</strong></div>
+                    <div class="stat-box"><span>DEX</span><strong>+4</strong></div>
+                    <div class="stat-box"><span>CON</span><strong>+2</strong></div>
+                    <div class="stat-box"><span>INT</span><strong>+0</strong></div>
+                    <div class="stat-box"><span>WIS</span><strong>+2</strong></div>
+                    <div class="stat-box"><span>CHA</span><strong>+4</strong></div>
+                </div>
+            </section>
+
+            <section class="char-section">
+                <h2>Saving Throws</h2>
+                <div class="stat-grid">
+                    <div class="stat-box"><span>Fortitude</span><strong>+9 (Trained)</strong></div>
+                    <div class="stat-box"><span>Reflex</span><strong>+13 (Expert)</strong></div>
+                    <div class="stat-box"><span>Will</span><strong>+11 (Expert)</strong></div>
+                </div>
+            </section>
+
+            <section class="char-section">
+                <h2>Trained & Expert Skills</h2>
+                <ul class="skill-list">
+                    <li><strong>Acrobatics:</strong> Trained (+11)</li>
+                    <li><strong>Athletics:</strong> Trained (+7)</li>
+                    <li><strong>Deception:</strong> Expert (+13)</li>
+                    <li><strong>Diplomacy:</strong> Trained (+11)</li>
+                    <li><strong>Intimidation:</strong> Expert (+14)</li>
+                    <li><strong>Medicine:</strong> Trained (+9)</li>
+                    <li><strong>Performance:</strong> Trained (+11)</li>
+                    <li><strong>Society:</strong> Trained (+7)</li>
+                    <li><strong>Stealth:</strong> Expert (+13)</li>
+                    <li><strong>Survival:</strong> Trained (+9)</li>
+                    <li><strong>Thievery:</strong> Expert (+13)</li>
+                </ul>
+            </section>
+
+            <section class="char-section">
+                <h2>Feats & Special Abilities</h2>
+                <ul class='feat-list'>
+                    <li>Assurance (Athletics)</li><li>Deny Advantage</li><li>Distracting Flattery</li><li>Dread Striker</li>
+                    <li>Goblin Weapon Familiarity</li><li>Hefty Hauler</li><li>Incredible Initiative</li><li>Intimidating Glare</li>
+                    <li>Mobility</li><li>Quiet Allies</li><li>Rogue's Racket</li><li>Sneak Attack</li>
+                    <li>Steady Balance</li><li>Surprise Attack</li><li>Thief</li><li>Trap Finder</li><li>Very Sneaky</li><li>Weapon Tricks</li>
+                </ul>
+            </section>
+
+            <section class="char-section">
+                <h2>Spellbook & Prepared Spells</h2>
+                <p>No spells found in export.</p>
+            </section>
+
+            <section class="char-section">
+                <h2>Edicts & Anathema</h2>
+                <p><strong>Edicts:</strong> []</p>
+                <p><strong>Anathema:</strong> ["Don't steal from happy people or folks poorer than you."]</p>
+            </section>
+
+            <section class="char-section">
+                <h2>Backstory</h2>
+                <div>
+                    <p>Thrown overboard after being caught as a stowaway on a merchant ship, Zunk swam ashore near Osprey Cove about a year ago. They lived off their skills for a couple of weeks until Elder Ordwi took a chance (and pity) on them, and started giving Zunk odd jobs in exchange for occasional room and board at the pub, eventually leading to more gainful, honest employment. They worked the bar, and eventually became a reliable runner/messenger/forager around the area.</p>
+                    <p>Used to being a mistrusted outsider, Zunk holds Ordwi dear as one of few people to ever show them kindness and trust, and quickly volunteered to help accompany and guide her on her journey.</p>
+                    <p>[Through certainly no fault of their own, Zunk found themselves on the run from the local magistrate in Varisia (Magnlmar?), and hopped in a conveniently ajar crate by the docks. Next thing they knew, they were headed north on a ship.]</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
 </body>
 </html>

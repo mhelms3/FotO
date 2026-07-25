@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhysilein of Osprey | Character Sheet</title>
+    <style>
+        :root {
+            --bg-color: #1a1a1c;
+            --card-bg: #242428;
+            --accent-color: #4a6fa5;
+            --text-color: #e1e1e6;
+            --text-muted: #a0a0b0;
+            --border-color: #383840;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 2rem;
+        }
+        .char-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+        .char-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .char-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .char-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 0.75rem;
+        }
+        .stat-box {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 0.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .stat-box span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        .stat-box strong {
+            font-size: 1.1rem;
+            color: #fff;
+        }
+        .skill-list, .feat-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.5rem;
+            list-style: none;
+            padding: 0;
+        }
+        details.spell-group {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+        details.spell-group summary {
+            font-size: 1rem;
+            color: var(--text-color);
+            outline: none;
+        }
+        details.spell-group ul {
+            margin-top: 0.5rem;
+            padding-left: 1.2rem;
+        }
+        ul {
+            margin-top: 0.5rem;
+            padding-left: 1.2rem;
+        }
+        .portrait-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background: #2a2a30;
+            border: 2px solid var(--accent-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .char-portrait {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="char-header">
+        <h1>Jhysilein of Osprey</h1>
+        <p>Level 5 Versatile Human Warpriest of Milani </p>
+    </header>
+
+    <main class="char-container">
+        <aside class="char-sidebar">
+            <div class="portrait-container">
+                <img src="jhysilein.png" alt="Jhysilein Portrait" class="char-portrait" />
+            </div>
+
+            <div class="char-section">
+                <h3>Vitals</h3>
+                <p><strong>HP:</strong> 58</p>
+                <p><strong>Speed:</strong> 20 ft</p>
+                <p><strong>Hero Points:</strong> 1</p>
+            </div>
+
+            <div class="char-section">
+                <h3>Heritage & Background</h3>
+                <p><strong>Ancestry:</strong> Human</p>
+                <p><strong>Heritage:</strong> Versatile Human</p>
+                <p><strong>Background:</strong> Osprey Warrior</p>
+            </div>
+        </aside>
+
+        <div class="char-main">
+            <section class="char-section">
+                <h2>Ability Modifiers</h2>
+                <div class="stat-grid">
+                    <div class="stat-box"><span>STR</span><strong>+4</strong></div>
+                    <div class="stat-box"><span>DEX</span><strong>+2</strong></div>
+                    <div class="stat-box"><span>CON</span><strong>+2</strong></div>
+                    <div class="stat-box"><span>INT</span><strong>+1</strong></div>
+                    <div class="stat-box"><span>WIS</span><strong>+4</strong></div>
+                    <div class="stat-box"><span>CHA</span><strong>+0</strong></div>
+                </div>
+            </section>
+
+            <section class="char-section">
+                <h2>Saving Throws</h2>
+                <div class="stat-grid">
+                    <div class="stat-box"><span>Fortitude</span><strong>+11 (Expert)</strong></div>
+                    <div class="stat-box"><span>Reflex</span><strong>+9 (Trained)</strong></div>
+                    <div class="stat-box"><span>Will</span><strong>+13 (Expert)</strong></div>
+                </div>
+            </section>
+
+            <section class="char-section">
+                <h2>Trained & Expert Skills</h2>
+                <ul class="skill-list">
+                    <li><strong>Athletics:</strong> Expert (+13)</li>
+                    <li><strong>Diplomacy:</strong> Trained (+7)</li>
+                    <li><strong>Medicine:</strong> Expert (+14)</li>
+                    <li><strong>Religion:</strong> Expert (+13)</li>
+                    <li><strong>Society:</strong> Trained (+8)</li>
+                    <li><strong>Survival:</strong> Trained (+11)</li>
+                </ul>
+            </section>
+
+            <section class="char-section">
+                <h2>Feats & Special Abilities</h2>
+                <ul class='feat-list'>
+                    <li>Assurance (Medicine)</li><li>Battle Medicine</li><li>Cleric Spellcasting</li><li>Continual Recovery</li>
+                    <li>Deadly Simplicity</li><li>Deity (Milani)</li><li>Divine Font (Healing)</li>
+                    <li>Eye for Numbers</li><li>First Doctrine (Warpriest)</li><li>Healing Hands</li>
+                    <li>Hefty Hauler</li><li>Medic Dedication</li><li>Natural Ambition</li>
+                    <li>Natural Skill (Survival)</li><li>Perception Expertise</li><li>Robust Recovery</li>
+                    <li>Second Doctrine (Warpriest)</li><li>Shield Block</li><li>Shield Block</li><li>Warpriest's Armor</li>
+                </ul>
+            </section>
+
+            <section class="char-section">
+                <h2>Spellbook & Prepared Spells</h2>
+                <details class="spell-group">
+                    <summary><strong>Rank 1</strong> (13 spells)</summary>
+                    <ul>
+                        <li>Needle Darts</li><li>Shield</li><li>Stabilize</li><li>Heal</li><li>Runic Weapon</li>
+                        <li>Bane</li><li>Light</li><li>Detect Magic</li><li>Mending</li><li>Benediction</li>
+                        <li>Divine Lance</li><li>Bless</li><li>Shielded Arm</li>
+                    </ul>
+                </details>
+                <details class="spell-group">
+                    <summary><strong>Rank 2</strong> (9 spells)</summary>
+                    <ul>
+                        <li>Cleanse Affliction</li><li>Cleanse Air</li><li>Instant Armor</li><li>Impeccable Flow</li>
+                        <li>Share Life</li><li>Dispel Magic</li><li>Radiant Field</li><li>Create Undead (Rust Zombie)</li><li>Consecrate</li>
+                    </ul>
+                </details>
+                <details class="spell-group">
+                    <summary><strong>Rank 3</strong> (4 spells)</summary>
+                    <ul>
+                        <li>Organsight</li><li>Sparkleskin</li><li>Martyr's Intervention</li><li>Moonlight Ray</li>
+                    </ul>
+                </details>
+            </section>
+
+            <section class="char-section">
+                <h2>Edicts & Anathema</h2>
+                <p><strong>Edicts:</strong> ['confront oppression in all its forms, defend the common folk, overcome despair']</p>
+                <p><strong>Anathema:</strong> ['abandon those in need, enslave or oppress others, harm the innocent through direct or inadvertent action']</p>
+            </section>
+
+            <section class="char-section">
+                <h2>Backstory</h2>
+                <div>
+                    <p>I remember little of that night, and Father and I don’t talk about it much, for obvious reasons. Well, obvious to me, anyway; he thinks he’s protecting me, but he’s really just protecting himself. What I do recall: The howling wind, of course and the creaking of the ship that soon progressed to the snapping of the masts and the splintering of the deck. Lanterns swinging crazily from the beams with flames low and guttered; swaying stars betraying the heaving ground beneath our feet. The sudden rush of cold black water tearing me from Mother’s grasp. The cursing of sailors, my raspy breath as I tried to keep above water, the screaming of Mother and the shouting of Father. Rough grasping hands hauling me out of the water, Father’s arms around me in the small pitching boat and the terrible look on his face as he focused on nothing, and in particular, not on the empty thwarts. Bailing and shivering until a leaden dawn, and the ache in my back and my heart as my father and I oared the boat to the beach in the thin cold drizzle.</p>
+                    <p>Thus we came, Father and I, to Osprey Cove. We never found Mother among the bodies that washed up onto the beach for the next fortnight.</p>
+                    <p>And here we stayed, for the simple reason we had no place else to go and could not get there if we did; nearly everything we had was lost in the wreck. But building boats is not that much different than building a house, and my Father’s skills suited this place well. Not a single one of his crafts has sunk, even in the worst squalls, The villagers think it is the gods honoring my mother’s sacrifice, but I will not sanctify the cruelty of Gods, man, or Nature. Father’s boats do not sink because he is obsessive about their construction; they are the only boats I feel safe in, and only when the sky is cloudless and I can see the shore.</p>
+                    <p>This is a kind place, too kind perhaps. I hear the scorn in the voices of travelers as they sit at our rough tables and the clinking coin in the tax collector’s pouch as they hurry through their collections. I see their fine clothes and worked steel. Maybe the others have been here so long they do not feel the boot on their neck anymore, and how they are held down so others can grow rich.</p>
+                    <p>I see also the fishwives, fingers gnarled from mending nets, occasional bruises and broken bones often clustered around the times their men have returned from long trips. I see how some are relieved when their men take again to the see, and how this mingles with their fear that they will not return. Or for some, that they will. I will not be one of them. I broke the nose of the last boy whose fingers fumbled in the wrong place. Naturally, Father only shook his head, admonishing me about not making a fuss. Like he knows what it’s like to be drunkenly pawed by bare chinned boy (shorter than me, to boot) who stinks of mackerel and beer.</p>
+                    <p>Thank the Gods Elder Ordwi has let me help her tend to the breaks and bruises, be they from a drunken backslap, a boat pitching wrongly, or some other cause the Gods visit upon us. She says I am a natural, and in truth, I am happy with the time I spend in the little temple, even though I do not favor Desna; dreams don’t put food on the table or stay the hand about to strike. I thought Gorum a better god to favor for a time, but it is devoted only to battle-not to justice. Then I found a dusty old book of the teachings of Milani, and it spoke to me. I even found a rusty morningstar to practice with; the writings of the priests of Gorum has convinced me of one thing-power is never granted, only taken. I am not sure Ordwi approves, but she has not said anything to anyone, including Father, who would be most angry to see me interested in anything other than whelping.</p>
+                    <p>Ordwi sees me though; she’s asked me to travel with her to Iron Harbor. A man collapsed on the outside of town during last night's storm and he died despite Ordwi’s efforts otherwise, croaking of something wrong in our “sibling” town. Father can hardly object; the inn won’t be serving anything other than beer, and the temple will be closed, thus preventing me from performing any of my duties. As I leave, she whispers: bring your morningstaff, just in case.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+</body>
+</html>

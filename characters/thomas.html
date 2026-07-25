@@ -2,13 +2,215 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Thomas - Character Sheet</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom S. Fidelus | Character Sheet</title>
+    <style>
+        :root {
+            --bg-color: #1a1a1c;
+            --card-bg: #242428;
+            --accent-color: #4a6fa5;
+            --text-color: #e1e1e6;
+            --text-muted: #a0a0b0;
+            --border-color: #383840;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 2rem;
+        }
+        .char-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+        .char-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .char-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .char-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 0.75rem;
+        }
+        .stat-box {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 0.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .stat-box span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        .stat-box strong {
+            font-size: 1.1rem;
+            color: #fff;
+        }
+        .skill-list, .feat-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.5rem;
+            list-style: none;
+            padding: 0;
+        }
+        details.spell-group {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+        details.spell-group summary {
+            font-size: 1rem;
+            color: var(--text-color);
+            outline: none;
+        }
+        details.spell-group ul {
+            margin-top: 0.5rem;
+            padding-left: 1.2rem;
+        }
+        ul {
+            margin-top: 0.5rem;
+            padding-left: 1.2rem;
+        }
+        .portrait-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background: #2a2a30;
+            border: 2px solid var(--accent-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .char-portrait {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+        }
+    </style>
 </head>
-<body style="padding: 2rem;">
-    <h1>Jhyselien</h1>
-    <p><a href="../index.html">&larr; Back to Campaign Log</a></p>
-    <hr style="margin: 1rem 0;">
-    <p><em>Character sheet details coming soon...</em></p>
+<body>
+
+    <header class="char-header">
+        <h1>Tom S. Fidelus</h1>
+        <p>Level 5 Aiuvarin Human Polearm Fighter</p>
+    </header>
+
+    <main class="char-container">
+        <aside class="char-sidebar">
+            <div class="portrait-container">
+                <img src="thomas.jpg" alt="Tom Portrait" class="char-portrait" />
+            </div>
+
+            <div class="char-section">
+                <h3>Vitals</h3>
+                <p><strong>HP:</strong> 78</p>
+                <p><strong>Speed:</strong> 30 ft</p>
+                <p><strong>Hero Points:</strong> 1</p>
+            </div>
+
+            <div class="char-section">
+                <h3>Heritage & Background</h3>
+                <p><strong>Ancestry:</strong> Human</p>
+                <p><strong>Heritage:</strong> Aiuvarin </p>
+                <p><strong>Background:</strong> Farmhand</p>
+            </div>
+        </aside>
+
+        <div class="char-main">
+            <section class="char-section">
+                <h2>Ability Modifiers</h2>
+                <div class="stat-grid">
+                    <div class="stat-box"><span>STR</span><strong>+4</strong></div>
+                    <div class="stat-box"><span>DEX</span><strong>+2</strong></div>
+                    <div class="stat-box"><span>CON</span><strong>+4</strong></div>
+                    <div class="stat-box"><span>INT</span><strong>+0</strong></div>
+                    <div class="stat-box"><span>WIS</span><strong>+2</strong></div>
+                    <div class="stat-box"><span>CHA</span><strong>+0</strong></div>
+                </div>
+            </section>
+
+            <section class="char-section">
+                <h2>Saving Throws</h2>
+                <div class="stat-grid">
+                    <div class="stat-box"><span>Fortitude</span><strong>+14 (Expert)</strong></div>
+                    <div class="stat-box"><span>Reflex</span><strong>+12 (Expert)</strong></div>
+                    <div class="stat-box"><span>Will</span><strong>+12 (Expert)</strong></div>
+                </div>
+            </section>
+
+            <section class="char-section">
+                <h2>Trained & Expert Skills</h2>
+                <ul class="skill-list">
+                    <li><strong>Acrobatics:</strong> Expert (+11)</li>
+                    <li><strong>Athletics:</strong> Expert (+14)</li>
+                    <li><strong>Diplomacy:</strong> Trained (+7)</li>
+                    <li><strong>Intimidation:</strong> Trained (+7)</li>
+                    <li><strong>Nature:</strong> Trained (+9)</li>
+                    <li><strong>Religion:</strong> Trained (+9)</li>
+                    <li><strong>Survival:</strong> Trained (+9)</li>
+                </ul>
+            </section>
+
+            <section class="char-section">
+                <h2>Feats & Special Abilities</h2>
+                <ul class='feat-list'>
+                    <li>Assurance (Athletics)</li><li>Bravery</li><li>Elven Instincts</li>
+                    <li>Fleet</li><li>Lunge</li><li>Otherworldly Magic</li><li>Powerful Leap</li>
+                    <li>Reactive Strike</li><li>Shield Block</li><li>Shielded Stride</li>
+                    <li>Sudden Charge</li><li>Titan Wrestler</li><li>Fighter Weapon Mastery (Polearm)</li>
+                </ul>
+            </section>
+
+            <section class="char-section">
+                <h2>Spellbook & Prepared Spells</h2>
+                <details class="spell-group">
+                    <summary><strong>Rank 1</strong> (1 spells)</summary>
+                    <ul>
+                        <li>Shield</li>
+                    </ul>
+                </details>
+            </section>
+
+            <section class="char-section">
+                <h2>Edicts & Anathema</h2>
+                <p><strong>Edicts:</strong> ['Consider alternate viewpoints before deciding', 'Maintain peace; protect and respect common folk']</p>
+                <p><strong>Anathema:</strong> ['Adherence to dogmatic belief', 'Any violence not deemed strictly necessary', 'Self aggrandizement']</p>
+            </section>
+
+            <section class="char-section">
+                <h2>Backstory</h2>
+                <div>
+                    <p>Son of Victor Fidelus and Shalelu the Ranger, a half-elven farm boy who feels overlooked by his famous father and is quite skeptical of "heroes". He was trained in fighting, nature and religion by his mother, who encouraged him to leave home on an "elfspringer" to explore and find his place in the world after he spontaneously manifested the ability to shield himself, despite having no magical training.</p>
+                    <p>He is currently on these travels of exploration, but dreams of returning home to the farm, to live a peaceful life. In the meantime, he will learn what he can and help out those around him.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
 </body>
 </html>
